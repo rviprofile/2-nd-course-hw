@@ -64,14 +64,13 @@ button {
     display: flex;
     gap: 32px;
     .game__link_1 {
-        background-s;
-        background-image: url(img/game1.jpg);
+        background: linear-gradient(180deg, rgba(39, 1, 15, 0.00) 0%, #001944 100%), url(img/game1.jpg), lightgray 50% / cover no-repeat;
     }
     .game__link_2 {
-        background-image: url(img/game2.jpg);
+        background: linear-gradient(180deg, rgba(39, 1, 15, 0.00) 0%, #001944 100%), url(img/game2.jpg), lightgray 50% / cover no-repeat;
     }
     .game__link_3 {
-        background-image: url(img/game3.jpg);
+        background: linear-gradient(180deg, rgba(39, 1, 15, 0.00) 0%, #001944 100%), url(img/game3.jpg), lightgray 50% / cover no-repeat;
     }
     .game__link {
         display: inline-block;
