@@ -7,7 +7,7 @@ html {
   font-family: Montserrat;
 }
 
-button {
+a {
   text-decoration: none;
   color: #FFF;
   font-size: 24px;
@@ -16,7 +16,7 @@ button {
   line-height: 32px;
   border: 0;
 }
-button:hover {
+a:hover {
   cursor: pointer;
 }
 
