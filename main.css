@@ -60,6 +60,10 @@ a:hover {
   font-weight: 400;
   line-height: normal;
 }
+.header__button:hover {
+  background: #EB443F;
+  cursor: pointer;
+}
 
 .game {
   padding-top: 128px;
@@ -67,6 +71,7 @@ a:hover {
   background: #000915;
   display: flex;
   gap: 32px;
+  flex-wrap: wrap;
 }
 .game .game__link_1 {
   background: linear-gradient(180deg, rgba(39, 1, 15, 0) 0%, #001944 100%), url(img/game1.jpg), lightgray 50%/cover no-repeat;
@@ -88,4 +93,44 @@ a:hover {
   display: flex;
   padding: 32px;
   align-items: flex-end;
+  box-sizing: border-box;
+}
+.game .game__link:hover {
+  border-radius: 16px;
+  border: 3px solid #44D2FF;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .header {
+    height: 735px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-position: center;
+  }
+  .header__tittle {
+    padding-top: 238px;
+    font-size: 32px;
+    text-align: center;
+  }
+  .header__text {
+    font-size: 14px;
+    text-align: center;
+    line-height: 22px;
+    margin-bottom: 32px;
+  }
+  .game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .game .game__link {
+    width: 343px;
+  }
 }/*# sourceMappingURL=main.css.map */
