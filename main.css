@@ -71,7 +71,6 @@ a:hover {
   background: #000915;
   display: flex;
   gap: 32px;
-  flex-wrap: wrap;
 }
 .game .game__link_1 {
   background: linear-gradient(180deg, rgba(39, 1, 15, 0) 0%, #001944 100%), url(img/game1.jpg), lightgray 50%/cover no-repeat;
@@ -93,7 +92,7 @@ a:hover {
   display: flex;
   padding: 32px;
   align-items: flex-end;
-  box-sizing: border-box;
+  box-sizing: outline;
 }
 .game .game__link:hover {
   border-radius: 16px;
@@ -101,6 +100,13 @@ a:hover {
   cursor: pointer;
 }
 
+@media (max-width: 1440px) {
+  .game {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+}
 @media (max-width: 600px) {
   .center {
     padding-left: 16px;

@@ -67,7 +67,6 @@ a {
     background: #000915;
     display: flex;
     gap: 32px;
-    flex-wrap: wrap;
     .game__link_1 {
         background: linear-gradient(180deg, rgba(39, 1, 15, 0.00) 0%, #001944 100%), url(img/game1.jpg), lightgray 50% / cover no-repeat;
     }
@@ -88,7 +87,7 @@ a {
         display: flex;
         padding: 32px;
         align-items: flex-end;
-        box-sizing: border-box;
+        box-sizing: outline;
 
         &:hover {
             border-radius: 16px;
