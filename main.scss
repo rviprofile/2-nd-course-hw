@@ -54,6 +54,10 @@ a {
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        &:hover {
+            background: #EB443F;
+            cursor: pointer;
+        }
     }
 
 }
@@ -83,5 +87,13 @@ a {
         display: flex;
         padding: 32px;
         align-items: flex-end;
+        box-sizing: border-box;
+
+        &:hover {
+            border-radius: 16px;
+            outline: 3px solid #44D2FF;
+            cursor: pointer;
+        }
     }
 }
+@import 'mobile'

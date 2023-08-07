@@ -1,51 +1,53 @@
-let a = 10;
-alert(a);
-a = 20;
-alert(a);
-let firstIphone = 2007;
-alert(firstIphone);
-let creatorJs = "Брендан Эйх";
-alert(creatorJs);
+// Задание 1
+let password = 'November1961';
+let userPassword = prompt('Введите пароль')
+if (password === userPassword) {
+    alert("Пароль введен верно");
+} else {
+    alert("Пароль введен не верно");
+}
 
-let firstNumber = 10;
-let secondNumber = 2;
-let sum = (firstNumber + secondNumber);
-let dif = (firstNumber - secondNumber);
-let comp = (firstNumber * secondNumber);
-let quot = (firstNumber / secondNumber);
-alert(`${sum}, ${dif}, ${comp}, ${quot}`);
+// Задание 2
+let c = 3;
+(c > 0 && c < 10) ? console.log('Верно') : console.log('Не верно');
 
-let result = (2 ** 5);
+// Задание 3
+let d = 6;
+let e = 55;
+(d > 100 || e > 100) ? console.log('Верно') : console.log('Не верно');
+
+// Задание 4
+let a = '2';
+let b = '3';
+let result = Number(a) + Number(b);
 alert(result);
 
-a = 9;
-let b = 2;
-alert(a % b);
+// Задание 5
+let monthNumber = 11;
+switch (monthNumber) {
+    case 12:
+    case 1:
+    case 2:
+        console.log('Зима');
+        break;
+    case 3:
+    case 4:
+    case 5:
+        console.log('Весна');
+        break;
+    case 6:
+    case 7:
+    case 8:
+        console.log('Лето');
+        break;
+    case 9:
+    case 10:
+    case 11:
+        console.log('Осень');
+        break;
+    default: 
+        console.log('Такого месяца пока нет');
+        break;
+}
 
-let num = 1;
-num += 5;
-num -= 3;
-num *= 7;
-num /= 3;
-num = num++;
-num = num--;
-alert(num);
 
-let age = Number(prompt("Сколько вам лет?"));
-alert(age);
-
-let user = {
-    name: "John",
-    age: 25,
-    isAdmin: false,
-};
-user.cityOfResidence = "Washington";
-user.age = 40;
-delete user.cityOfResidence;
-alert(user.age)
-
-let info = prompt("Какую информацию хотите узнать о пользователе?", 'name');
-alert(user[info]);
-
-let yourName = prompt("Как Вас зовут?");
-alert(`Привет, ${yourName}!`)
