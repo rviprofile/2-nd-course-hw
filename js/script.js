@@ -50,6 +50,15 @@
 //         break;
 // }
 
+// // Задание 7
+// let userNumber = Number(prompt("Введите любое число"));
+// if (userNumber % 2 === 0) {
+//     alert("Число четное");
+// } else {
+//     alert("Число не четное");
+// };
+
+
 // hw-4
 // Задание 1
 let i = 1;
@@ -78,7 +87,7 @@ const obj = {
     'Вася': 300,
     'Петя': 400,
 }
-for (key in obj) {
+for (let key in obj) {
     console.log(`${key} - зарплата ${obj[key]} долларов.`);
 }
 
@@ -94,10 +103,4 @@ console.log(`Потребовалось ${num} итераций.`)
 
 //Задание 6
 let firstFriday = Number(prompt("Число первой пятницы."));
-for (let day = 0; day <= 31; day++) {
-    if (day === firstFriday) {console.log(`Сегодня пятница, ${day}-е число. Необходимо подготовить отчет.`)};
-    if (day === firstFriday + 7) {console.log(`Сегодня пятница, ${day}-е число. Необходимо подготовить отчет.`)};
-    if (day === firstFriday + 14) {console.log(`Сегодня пятница, ${day}-е число. Необходимо подготовить отчет.`)};
-    if (day === firstFriday + 21) {console.log(`Сегодня пятница, ${day}-е число. Необходимо подготовить отчет.`)};
-    if (day === firstFriday + 28) {console.log(`Сегодня пятница, ${day}-е число. Необходимо подготовить отчет.`)};
-}
+for (let day = firstFriday; day <= 31; day+=7) console.log(`Сегодня пятница, ${day}-е число. Необходимо подготовить отчет.`);
