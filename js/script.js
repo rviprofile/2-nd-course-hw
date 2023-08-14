@@ -60,13 +60,9 @@ console.log(arr9);
 
 //Задание 10
 let arr10 = [4, 4, 9, 2, 3, 7, 9];
-for (let i = 0; i < arr10.length; i++) {
+for (let i = 0; i < arr10.length-1; i++) {
     let result = arr10[i] + arr10[i+1];
-    if (isNaN(result)) {
-        console.log(`${arr10[i]}+`);
-    } else {
-        console.log(result);
-    }
+    console.log(result);
 }
 
 //Задание 11
