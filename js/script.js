@@ -32,13 +32,13 @@ squareAlt(9);
 
 // Задание 4
 function verifyAge () {
-    let userAge = Number(prompt('Сколько Вам лет?'));
-    if (isNaN(userAge) || userAge == '') {
-        alert('Вы ничего не ввели');
+    let userAge = prompt('Сколько Вам лет?');
+    if (userAge < 0 || isNaN(userAge) || userAge.trim() == '') {
+        alert('Вы ввели неправильное значение');
+    } else if (userAge >= 0 && userAge <= 12) {
+        alert('Привет, друг!');
     } else if (userAge >= 13) {
         alert('Добро пожаловать!');
-    } else if (userAge <= 12 && userAge >= 0) {
-        alert('Привет, друг!');
     }
 }
 verifyAge();
@@ -55,9 +55,9 @@ multiply(7, "P");
 
 // Задание 6
 function cube () {
-    let a = Number(prompt('Введите число'));
-    if (isNaN(a) || a == '') {
-        return 'Переданный параметр не является числом';
+    let a = prompt('Введите число');
+    if (isNaN(a) || a.trim() == '') {
+        console.log('Переданный параметр не является числом');
     } else { 
         let result = a ** 3;
         console.log(`${a} в кубе равняется ${result}`);
