@@ -1,84 +1,135 @@
-//Задание 1
-const arr = [1, 5, 4, 10, 0, 3];
-for (let elem of arr) {
-    if (elem == 10) {
-    console.log(elem);
-    break; }
+// Задание 1
+let str = 'js';
+str = str.toUpperCase();
+console.log(str);
+
+// Задание 2
+let newArray = [];
+function searchString (arrayStrings, startString) {
+    arrayStrings.forEach((arrayStrings) => {
+        if (arrayStrings.toLowerCase().startsWith(startString.toLowerCase())) {
+            newArray.push(arrayStrings);
+        }
+    })
 }
+let nouns = ['Комод','Кошка','Рельсы','Шпалы','Кирпичи','Вопрос','Очередь','Кофта',];
+let filter = 'Ко';
+searchString(nouns, filter);
+console.log(newArray);
 
-//Задание 2
-const arr2 = [1, 5, 4, 10, 0, 3];
-console.log(arr2.indexOf(4));
+// Задание 3
+let numb = 32.58884;
+console.log(Math.floor(numb));
+console.log(Math.ceil(numb));
+console.log(Math.round(numb));
 
-//Задание 3
-const arr3 = [1, 3, 5, 10, 20];
-let arrJoin = arr3.join(' ');
-console.log(arrJoin);
+// Задание 4
+console.log(Math.min(52, 53, 49, 77, 21, 32));
+console.log(Math.max(52, 53, 49, 77, 21, 32));
 
-//Задание 4
-let arr4 = [];
-for (let i = 0; i < 3; i++) {
-    let list = [];
-    for (let i = 0; i < 3; i++) {
-        list.push(1);
+// Задание 5
+function getRandomInt(minValue, maxValue) {
+    return Math.round(Math.random() * maxValue);
+}
+console.log(getRandomInt(0, 10));
+
+// Задание 6
+let arrRandom = [];
+function forArrRandom (number) {
+    while (arrRandom.length < Math.floor(number / 2)) {
+        arrRandom.push(Math.round(Math.random() * number));
     }
-    arr4.push(list);
 }
-console.log(arr4);
+forArrRandom(14);
+console.log(arrRandom);
 
-//Задание 5
-let arr5 = [1, 1, 1];
-for (let i = 0; i < 3; i++) {
-    arr5.push(2)
+// Задание 7
+function randomInt (a, b) {
+    return Math.round(Math.random() * (b - a)) + a;
 }
-console.log(arr5);
+console.log(randomInt(3,9));
 
-//Задание 6
-let arr6 = [9, 8, 7, 'a', 6, 5];
-arr6.sort();
-arr6.pop();
-console.log(arr6);
+// Задание 8
+console.log(new Date());
 
-//Задание 7
-let arr7 = [9, 8, 7, 6, 5];
-let shance = Number(prompt('Угадай число'))
-if (arr7.includes(shance)) {
-    alert(`Угадал, здесь есть ${shance}`)
-} else {
-    alert(`Не угадал, здесь нет ${shance}`)
-}
+// Задание 9
+let currentDate = new Date();
+console.log(currentDate.setDate(currentDate.getDate() + 73));
 
-//Задание 8
-let str = 'abcdef';
-let strRev = str.split('').reverse().join('');
-console.log(strRev);
+// Задание 10
 
-//Задание 9
-let arr8 = [[1, 2, 3,],[4, 5, 6]];
-let arr9 = arr8[0].concat(arr8[1]);
-console.log(arr9);
 
-//Задание 10
-let arr10 = [4, 4, 9, 2, 3, 7, 9];
-for (let i = 0; i < arr10.length-1; i++) {
-    let result = arr10[i] + arr10[i+1];
-    console.log(result);
+// Задание 11
+const words = ['Яблоко', 'Груша', 'Дыня', 'Виноград', 'Персик', 'Апельсин', 'Мандарин'];
+
+function shuffle (array) {
+    let currentIndex = array.length, randomIndex; 
+    while (currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+    return array;
 }
 
-//Задание 11
-let square = arr10.map(item => item ** 2);
-console.log(square);
+function wordsGame() {
+    let newWords = shuffle(words); // создал новый массив из перемешанных слов
+    alert(newWords); 
+    let score = 0; // присвоил игроку счёт равный нулю
+    let firstUserAnswer = prompt('Чему равнялся первый элемент массива?');
+    let secondUserAnswer = prompt('Чему равнялся последний элемент массива?');
 
-//Задание 12
-let words = ['услуга', 'защищать', 'помолчать', 'производство', 'терпеть', 'особенность', ];
-let wordslen = words.map(item => item.length);
-console.log(wordslen);
+    // Проверка первого слова и увеличение счёта
+    if (firstUserAnswer.toLowerCase() === newWords[0].toLowerCase()) {
+        score++;
+    };
 
-//Задание 13
-function filterPositive(array) {
-    let result = array.filter(item => item < 0)
-    return result;
+    // Проверка второго слова и увеличение счёта
+    if (secondUserAnswer.toLowerCase() === newWords[newWords.length - 1].toLowerCase()) {
+        score++;
+    };
+
+    // Подведение итогов
+    switch (score) {
+        case 0:
+            alert('Вы ответили не верно');
+            break;
+        case 1:
+            alert('Вы были близки к победе');
+            break;
+        case 2:
+            alert('Поздравляю, вы вспомнили оба слова!');
+            break;
+    }
 }
-console.log(filterPositive([-1, 0, 5, -10, 56]));
-console.log(filterPositive([-25, 25, 0, -1000, -2]));
 
+
+// Игра из 2.5
+function season () {
+    let monthNumber = Number(prompt("Введите номер месяца"));
+    switch (monthNumber) {
+        case 12:
+        case 1:
+        case 2:
+            alert('Зима');
+            break;
+        case 3:
+        case 4:
+        case 5:
+            alert('Весна');
+            break;
+        case 6:
+        case 7:
+        case 8:
+            alert('Лето');
+            break;
+        case 9:
+        case 10:
+        case 11:
+            alert('Осень');
+            break;
+        default: 
+            alert('Такого месяца пока нет');
+            break;
+    }
+}
