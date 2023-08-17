@@ -53,11 +53,25 @@ console.log(randomInt(3,9));
 console.log(new Date());
 
 // Задание 9
-let currentDate = new Date();
-console.log(currentDate.setDate(currentDate.getDate() + 73));
+let currentDate = new Date();  // Получаем текущую дату
+let currentDateMill = currentDate.getTime(); // Переводим её в миллисекунды
+let days73 = 73 * 24 * 60 * 60 * 1000; // Переводим 73 дня в миллисекунды 
+let calculate = currentDateMill + days73; // Складываем текущую дату и 73 дня
+let dayAfter73 = new Date(calculate); // Получаем новую дату, основанную на сложении миллисекунд
+console.log(dayAfter73);
 
 // Задание 10
+function fullDate (inputDate) {
+    const days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+    const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+    let date = new Date(inputDate);
+    let dateToAlert = "Дата: " + date.getDate() +" "+ months[date.getMonth()] +" "+ date.getFullYear() + " - это " + days[date.getDay()];
+    let timeToAlert = "Время: " + date.getHours() + " : " + date.getMinutes() + " : " + date.getSeconds();
+    console.log(dateToAlert);
+    console.log(timeToAlert);
+}
 
+fullDate("27 June 2022 12:15:33");
 
 // Задание 11
 const words = ['Яблоко', 'Груша', 'Дыня', 'Виноград', 'Персик', 'Апельсин', 'Мандарин'];
