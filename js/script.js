@@ -4,18 +4,13 @@ str = str.toUpperCase();
 console.log(str);
 
 // Задание 2
-let newArray = [];
 function searchString (arrayStrings, startString) {
-    arrayStrings.forEach((arrayStrings) => {
-        if (arrayStrings.toLowerCase().startsWith(startString.toLowerCase())) {
-            newArray.push(arrayStrings);
-        }
-    })
+    return arrayStrings.filter(word => word.startsWith(startString));
 }
 let nouns = ['Комод','Кошка','Рельсы','Шпалы','Кирпичи','Вопрос','Очередь','Кофта',];
 let filter = 'Ко';
-searchString(nouns, filter);
-console.log(newArray);
+
+console.log(searchString(nouns, filter));
 
 // Задание 3
 let numb = 32.58884;
@@ -29,9 +24,9 @@ console.log(Math.max(52, 53, 49, 77, 21, 32));
 
 // Задание 5
 function getRandomInt(minValue, maxValue) {
-    return Math.round(Math.random() * maxValue);
+    return Math.round(Math.random() * (maxValue - minValue)) + minValue;
 }
-console.log(getRandomInt(0, 10));
+console.log(getRandomInt(1, 10));
 
 // Задание 6
 let arrRandom = [];
@@ -53,17 +48,13 @@ console.log(randomInt(3,9));
 console.log(new Date());
 
 // Задание 9
-let currentDate = new Date();  // Получаем текущую дату
-let currentDateMill = currentDate.getTime(); // Переводим её в миллисекунды
-let days73 = 73 * 24 * 60 * 60 * 1000; // Переводим 73 дня в миллисекунды 
-let calculate = currentDateMill + days73; // Складываем текущую дату и 73 дня
-let dayAfter73 = new Date(calculate); // Получаем новую дату, основанную на сложении миллисекунд
-console.log(dayAfter73);
+let currentDate = new Date(); 
+console.log(currentDate.toString(currentDate.setDate(currentDate.getDate() + 73)));
 
 // Задание 10
 function fullDate (inputDate) {
     const days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
-    const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+    const months = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
     let date = new Date(inputDate);
     let dateToAlert = "Дата: " + date.getDate() +" "+ months[date.getMonth()] +" "+ date.getFullYear() + " - это " + days[date.getDay()];
     let timeToAlert = "Время: " + date.getHours() + " : " + date.getMinutes() + " : " + date.getSeconds();
