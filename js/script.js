@@ -1,69 +1,3 @@
-// Задание 1
-let str = 'js';
-str = str.toUpperCase();
-console.log(str);
-
-// Задание 2
-function searchString (arrayStrings, startString) {
-    return arrayStrings.filter(word => word.startsWith(startString));
-}
-let nouns = ['Комод','Кошка','Рельсы','Шпалы','Кирпичи','Вопрос','Очередь','Кофта',];
-let filter = 'Ко';
-
-console.log(searchString(nouns, filter));
-
-// Задание 3
-let numb = 32.58884;
-console.log(Math.floor(numb));
-console.log(Math.ceil(numb));
-console.log(Math.round(numb));
-
-// Задание 4
-console.log(Math.min(52, 53, 49, 77, 21, 32));
-console.log(Math.max(52, 53, 49, 77, 21, 32));
-
-// Задание 5
-function getRandomInt(minValue, maxValue) {
-    return Math.round(Math.random() * (maxValue - minValue)) + minValue;
-}
-console.log(getRandomInt(1, 10));
-
-// Задание 6
-let arrRandom = [];
-function forArrRandom (number) {
-    while (arrRandom.length < Math.floor(number / 2)) {
-        arrRandom.push(Math.round(Math.random() * number));
-    }
-}
-forArrRandom(14);
-console.log(arrRandom);
-
-// Задание 7
-function randomInt (a, b) {
-    return Math.round(Math.random() * (b - a)) + a;
-}
-console.log(randomInt(3,9));
-
-// Задание 8
-console.log(new Date());
-
-// Задание 9
-let currentDate = new Date(); 
-console.log(currentDate.toString(currentDate.setDate(currentDate.getDate() + 73)));
-
-// Задание 10
-function fullDate (inputDate) {
-    const days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
-    const months = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
-    let date = new Date(inputDate);
-    let dateToAlert = "Дата: " + date.getDate() +" "+ months[date.getMonth()] +" "+ date.getFullYear() + " - это " + days[date.getDay()];
-    let timeToAlert = "Время: " + date.getHours() + " : " + date.getMinutes() + " : " + date.getSeconds();
-    console.log(dateToAlert);
-    console.log(timeToAlert);
-}
-
-fullDate("27 June 2022 12:15:33");
-
 // Задание 11
 const words = ['Яблоко', 'Груша', 'Дыня', 'Виноград', 'Персик', 'Апельсин', 'Мандарин'];
 
@@ -138,3 +72,83 @@ function season () {
             break;
     }
 }
+
+// 2.8 Callback, setTimeout, setInterval
+// Задание 1
+const peoplee = [
+    { name: 'Глеб', age: 29 },
+    { name: 'Анна', age: 17 },
+    { name: 'Олег', age: 7 },
+    { name: 'Оксана', age: 47 }
+ ];
+ console.log(peoplee.sort((a, b) => a.age < b.age ? -1 : 1));
+
+//Задание 2
+function isPositive(int) {
+    let result = int > 0 ? true : false;
+    return result;
+}
+function isMale(obj) {
+    let result = obj.gender === 'male' ? true : false;
+    return result;
+}
+function filter (arr, callback) {
+    const output = [];
+    arr.forEach(element => {
+        if (callback(element)) {
+            output.push(element)
+        };
+    });
+    return output;
+}
+    
+console.log(filter([3, -4, 1, 9], isPositive)); // Должен выводить [3, 1, 9]
+    
+    const people = [
+       {name: 'Глеб', gender: 'male'},
+       {name: 'Анна', gender: 'female'},
+       {name: 'Олег', gender: 'male'},
+       {name: 'Оксана', gender: 'female'}
+    ];
+    
+console.log(filter(people, isMale)); // Должен выводить [{name: 'Глеб', gender: 'male'},  {name: 'Олег', gender: 'male'}]
+
+//Задание 3
+function timer() {
+    const interval = setInterval(() => {console.log(new Date)}, 3000);
+    setTimeout(() => {
+        clearInterval(interval);
+        console.log('30 секунд прошло');
+    }, 30000);
+}
+timer();
+
+//Задание 4
+function delayForSecond(callback) {
+    setTimeout(callback, 1000);
+}
+
+delayForSecond(function () {
+  console.log('Привет, Глеб!');
+})
+
+//Задание 5
+// Функция delayForSecond через 1 секунду пишет в консоль «Прошла одна секунда», 
+// а затем вызывает переданный колбэк
+function delayForSecond(cb) {
+    setTimeout(() => {
+        console.log('Прошла одна секунда');
+				if(cb) { 	cb(); }
+
+    }, 1000)
+}
+
+// Функция sayHi выводит в консоль приветствие для указанного имени
+function sayHi (name) {
+    console.log(`Привет, ${name}!`);
+}
+
+// Код выше менять нельзя
+// Нужно изменить код ниже:
+function sayHiName() {sayHi('Глеб')};
+delayForSecond(sayHiName);
